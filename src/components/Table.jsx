@@ -1,21 +1,7 @@
-import { TableRow } from "./TableRow.jsx"
-import { resultados } from "./Form.jsx"
+function Table(props){
 
-const renderMateria = () => 
-    resultados.map((resultado, index) => {
-        return(
-            <TableRow
-            key={index}
-            nombre={resultado.nombre}
-            alumnos={resultado.alumnos} 
-            promedio={resultado.promedio}
-            />
-        )
-    })
-
-function Table(){
     return(
-        <div>
+        <>
             <table>
                 <thead>
                     <tr>
@@ -25,10 +11,10 @@ function Table(){
                     </tr>
                 </thead>
                 <tbody>
-                    {renderMateria()}
+                    {props.children}
                 </tbody>
             </table>
-        </div>
+        </>
     )
 }
 
